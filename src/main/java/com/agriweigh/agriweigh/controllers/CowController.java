@@ -55,14 +55,14 @@ public class CowController {
     }
     
     @GetMapping("/delete/{id}")
-    public String getMethodName(@PathVariable Long id) {
+    public String deleteCow(@PathVariable Long id) {
         cowService.delete(id);
         return "redirect:/cows/list";
     }
 
     @GetMapping("/download")
     public ResponseEntity<byte[]> downloadCowsPdf() throws IOException {
-        List<Cow> cows = cowService.findAll(); // Asumiendo que tienes un método para obtener las vacas
+        List<Cow> cows = cowService.findAll(); 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         
         pdfCowGenerator.generatePdf(cows, outputStream);
