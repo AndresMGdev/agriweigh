@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-8 text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">¡Bienvenido a Agriweigh!</h1>
+        <p class="text-lg text-gray-600 mb-8">Selecciona una opción para medir el peso de tus animales:</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Opción para Vacas -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <img src="/cow.png" alt="Vaca" class="w-auto h-auto mx-auto mb-4">
+                <h2 class="text-xl font-semibold mb-2">Pesaje de Vacas</h2>
+                <p class="text-gray-500">Mide el peso de tus vacas fácilmente.</p>
+                <a href="/cows/list" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ir</a>
+            </div>
+
+            <!-- Opción para Caballos -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <img src="/horse.png" alt="Caballo" class="w-auto h-auto mx-auto mb-4">
+                <h2 class="text-xl font-semibold mb-2">Pesaje de Caballos</h2>
+                <p class="text-gray-500">Obtén el peso de tus caballos de manera precisa.</p>
+                <a href="/horses/list" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ir</a>
+            </div>
+
+            <!-- Opción para Cerdos -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <img src="/pig.png" alt="Cerdo" class="w-auto h-auto mx-auto mb-4">
+                <h2 class="text-xl font-semibold mb-2">Pesaje de Cerdos</h2>
+                <p class="text-gray-500">Mide el peso de tus cerdos con facilidad.</p>
+                <a href="/pigs/list" class="inline-block mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ir</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
