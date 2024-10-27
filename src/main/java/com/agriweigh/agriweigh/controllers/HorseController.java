@@ -54,7 +54,7 @@ public class HorseController {
     }
     
     @GetMapping("/delete/{id}")
-    public String deleteHorse(@PathVariable Long id) {
+    public String deleteHorse(@PathVariable("id") Long id) {
         horseService.delete(id);
         return "redirect:/horses/list";
     }

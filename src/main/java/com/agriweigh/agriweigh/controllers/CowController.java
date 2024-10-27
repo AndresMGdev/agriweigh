@@ -55,7 +55,7 @@ public class CowController {
     }
     
     @GetMapping("/delete/{id}")
-    public String deleteCow(@PathVariable Long id) {
+    public String deleteCow(@PathVariable("id") Long id) {
         cowService.delete(id);
         return "redirect:/cows/list";
     }

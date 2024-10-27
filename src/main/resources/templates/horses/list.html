@@ -29,8 +29,8 @@
                     <td class="py-2 px-3 border-b text-sm" th:text="${caballo.chestCircumference}"></td>
                     <td class="py-2 px-3 border-b text-sm" th:text="${caballo.estimatedWeight}"></td>
                     <td class="py-2 px-3 border-b text-sm">
-                        <a th:href="@{'/horses/edit/' + ${caballo.id}}" class="text-blue-600 hover:underline">Editar</a>
-                        <a th:href="@{'/horses/delete/' + ${caballo.id}}" class="text-red-600 hover:underline ml-3">Eliminar</a>
+                        <a th:href="@{/horses/edit/{id}(id=${caballo.id})}" class="text-blue-600 hover:underline">Editar</a>
+                        <a th:href="@{/horses/delete/{id}(id=${caballo.id})}" class="text-red-600 hover:underline ml-3">Eliminar</a>
                     </td>
                 </tr>
             </tbody>
@@ -38,7 +38,7 @@
                 <tr>
                     <td colspan="6" class="py-2 text-center">
                         <a href="/horses/new" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Agregar nuevo Caballo</a>
-                        <a href="/horses/download" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Descargar PDF</a>
+                        <a th:if="${!horses.isEmpty()}" href="/horses/download" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Descargar PDF</a>
                     </td>
                 </tr>
             </tfoot>
