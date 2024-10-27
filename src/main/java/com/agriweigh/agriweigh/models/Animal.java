@@ -1,5 +1,7 @@
 package com.agriweigh.agriweigh.models;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,10 +18,10 @@ public abstract class Animal {
     private Long id;
     private String code;
     private Integer age;
-    private double estimatedWeight;
+    private BigDecimal estimatedWeight;
 
     public Animal() {}
-    public Animal(Long id, String code, Integer age, double estimatedWeight) {
+    public Animal(Long id, String code, Integer age, BigDecimal estimatedWeight) {
         this.id = id;
         this.code = code;
         this.age = age;
@@ -44,13 +46,13 @@ public abstract class Animal {
     public void setAge(Integer age) {
         this.age = age;
     }
-    public double getEstimatedWeight() {
+    public BigDecimal getEstimatedWeight() {
         return estimatedWeight;
     }
-    public void setEstimatedWeight(double estimatedWeight) {
+    public void setEstimatedWeight(BigDecimal estimatedWeight) {
         this.estimatedWeight = estimatedWeight;
     }
     
-    public abstract double calculateWeight();
+    public abstract BigDecimal calculateWeight();
 
 }

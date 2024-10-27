@@ -22,7 +22,7 @@ public class CowController {
     @Autowired
     private CowService cowService;
 
-    @GetMapping
+    @GetMapping("/list")
     public String listCows(Model model) {
         model.addAttribute("cows", cowService.findAll());
         return "cows/list";
@@ -37,7 +37,7 @@ public class CowController {
     @PostMapping
     public String saveCow(@ModelAttribute Cow cow) {
         cowService.save(cow);
-        return "redirect:/cows";
+        return "redirect:/cows/list";
     }
     
     @GetMapping("/edit/{id}")
@@ -49,6 +49,6 @@ public class CowController {
     @GetMapping("/delete/{id}")
     public String getMethodName(@PathVariable Long id) {
         cowService.delete(id);
-        return "redirect:/cows";
+        return "redirect:/cows/list";
     }
 }
