@@ -30,7 +30,7 @@ public class HorseController {
     private PdfHorseGenerator pdfHorseGenerator;
 
     @GetMapping("/list")
-    public String listCows(Model model) {
+    public String listHorses(Model model) {
         model.addAttribute("horses", horseService.findAll());
         return "horses/list";
     }
@@ -60,7 +60,7 @@ public class HorseController {
     }
 
     @GetMapping("/download")
-    public ResponseEntity<byte[]> downloadCowsPdf() throws IOException {
+    public ResponseEntity<byte[]> downloadHorsePdf() throws IOException {
         List<Horse> horses = horseService.findAll();
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         
