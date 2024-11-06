@@ -22,8 +22,8 @@ public class Pig extends Animal {
 
     @Override
     public BigDecimal calculateWeight() {
-        BigDecimal weight = BigDecimal.valueOf(chestCircumference * chestCircumference * bodyLength * 69.3)
-            .divide(BigDecimal.valueOf(1), 2, RoundingMode.HALF_UP);
+        BigDecimal weight = BigDecimal.valueOf(chestCircumference * chestCircumference * bodyLength * 69.3 / 1000000)
+            .setScale(2, RoundingMode.HALF_UP);
         return weight;
     }
     

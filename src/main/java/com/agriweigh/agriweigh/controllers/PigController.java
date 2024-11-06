@@ -43,7 +43,7 @@ public class PigController {
     @PostMapping
     public String savePig(@ModelAttribute Pig pig) {
         pigService.save(pig);
-        return "redirect:/horses/list";
+        return "redirect:/pigs/list";
     }
     
     @GetMapping("/edit/{id}")
